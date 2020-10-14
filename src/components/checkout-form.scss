@@ -1,0 +1,60 @@
+.StripeElement {
+    height: 40px;
+    padding: 10px 12px;
+    width: 100%;
+    color: #32325d;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 15px;
+    box-shadow: 0 1px 10px #c8c9ca;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+  
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+  
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+  
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+
+.card-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px 50px;
+    width: 500px;
+    margin: 100px auto;
+    // box-shadow: 2px 2px 10px #bbb;
+    label {
+        text-align: left;
+        margin-bottom: 15px;
+        color: lightgray;
+    }
+
+    button {
+        padding: 12px 18px;
+        border: none;
+        background: rgb(48, 213, 224);
+        margin-top: 20px;
+        font-size: 24px;
+        color: white;
+        max-width: 150px;
+        border-radius: 4px;
+        box-shadow: 0 1px 10px #c8c9ca;
+        cursor: pointer;
+        margin-left: calc(50% - 75px);
+        transition: all .3s;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 1px 5px #c8c9ca;
+        }
+    }
+}

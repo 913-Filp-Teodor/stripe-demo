@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import CreateCustomerForm from './components/CreateCustomerForm';
+import CheckoutForm from './components/CheckoutForm';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import './App.css';
 
-function App() {
-  return (
+const stripePromise = loadStripe('pk_test_51HH2x4Gev2lIfPl9rFRMoDJnwl7t0EsQ4OFlUhEfGWm5eAZvvPO7Wey5TXu4n9Gj995RkoFakgoKFxpZxN8AAqP600LUryGwZP');
+
+const App = () => (
+  <Elements stripe={stripePromise}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route path="/checkout">
+            <CheckoutForm />
+          </Route>
+          <Route path="/">
+            <CreateCustomerForm />
+          </Route>
+        </Switch>
+      </Router>
     </div>
-  );
-}
+  </Elements >
+);
+
 
 export default App;
